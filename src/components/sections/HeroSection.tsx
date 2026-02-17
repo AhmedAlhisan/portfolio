@@ -103,7 +103,7 @@ export default function HeroSection({ id = 'home' }: HeroSectionProps) {
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8 text-center">
         {/* Premium Chips */}
         <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -120,7 +120,7 @@ export default function HeroSection({ id = 'home' }: HeroSectionProps) {
                 stiffness: 200,
                 damping: 20
               }}
-              className="relative group px-6 py-3 rounded-full bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-transparent border border-cyan-400/30 text-cyan-300 backdrop-blur-md font-medium text-sm tracking-wide overflow-hidden shadow-lg shadow-cyan-500/10 hover:shadow-cyan-500/30 hover:scale-105 transition-all duration-300"
+              className="relative group px-4 py-2 md:px-6 md:py-3 rounded-full bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-transparent border border-cyan-400/30 text-cyan-300 backdrop-blur-md font-medium text-xs md:text-sm tracking-wide overflow-hidden shadow-lg shadow-cyan-500/10 hover:shadow-cyan-500/30 hover:scale-105 transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/0 via-cyan-400/10 to-cyan-400/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
               <span className="relative z-10">{chip}</span>
@@ -133,9 +133,9 @@ export default function HeroSection({ id = 'home' }: HeroSectionProps) {
           initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-8"
+          className="mb-6 md:mb-8"
         >
-          <h1 className="text-hero font-extrabold mb-2 relative inline-block">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-2 relative inline-block leading-tight">
             <span className="bg-gradient-to-r from-white via-cyan-100 to-white dark:from-white dark:via-cyan-100 dark:to-white bg-clip-text text-transparent animate-text-glow drop-shadow-[0_0_30px_rgba(6,182,212,0.3)]">
               {personalInfo.name}
             </span>
@@ -159,7 +159,7 @@ export default function HeroSection({ id = 'home' }: HeroSectionProps) {
           initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 1, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-3xl md:text-5xl lg:text-5xl font-bold text-theme opacity-90 mb-8 leading-tight tracking-tight"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-theme opacity-90 mb-6 md:mb-8 leading-tight tracking-tight px-4"
         >
           <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-gray-100 dark:via-white dark:to-gray-100 bg-clip-text text-transparent">
             {hero.headline}
@@ -171,7 +171,7 @@ export default function HeroSection({ id = 'home' }: HeroSectionProps) {
           initial={{ opacity: 0, y: 30, filter: 'blur(6px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 1, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
-          className="text-xl md:text-2xl lg:text-3xl text-theme opacity-60 max-w-4xl mx-auto mb-16 font-light leading-relaxed"
+          className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-theme opacity-60 max-w-4xl mx-auto mb-12 md:mb-16 font-light leading-relaxed px-4"
         >
           {hero.subheadline}
         </motion.p>
@@ -181,21 +181,21 @@ export default function HeroSection({ id = 'home' }: HeroSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.7, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-wrap justify-center gap-6 mb-24"
+          className="flex flex-wrap justify-center gap-4 md:gap-6 mb-16 md:mb-24"
         >
           <MagneticButton
             onClick={() => handleScroll('#projects')}
-            className="group relative px-10 py-5 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-500 to-blue-600 text-white font-semibold text-lg overflow-hidden shadow-[0_20px_50px_rgba(6,182,212,0.3)] hover:shadow-[0_30px_70px_rgba(6,182,212,0.5)] transition-all duration-500 flex items-center gap-3"
+            className="group relative px-6 py-3 md:px-10 md:py-5 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-500 to-blue-600 text-white font-semibold text-base md:text-lg overflow-hidden shadow-[0_20px_50px_rgba(6,182,212,0.3)] hover:shadow-[0_30px_70px_rgba(6,182,212,0.5)] transition-all duration-500 flex items-center gap-2 md:gap-3"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
             <span className="relative z-10">View Projects</span>
-            <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+            <ArrowRight className="relative z-10 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform duration-300" />
           </MagneticButton>
 
           <MagneticButton
             onClick={() => handleScroll('#contact')}
-            className="group relative px-10 py-5 rounded-2xl bg-white/5 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/20 text-theme font-semibold text-lg hover:bg-white/10 hover:border-white/30 transition-all duration-500 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.15)]"
+            className="group relative px-6 py-3 md:px-10 md:py-5 rounded-2xl bg-white/5 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/20 text-theme font-semibold text-base md:text-lg hover:bg-white/10 hover:border-white/30 transition-all duration-500 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.15)]"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-cyan-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
             <span className="relative z-10">Let's Connect</span>

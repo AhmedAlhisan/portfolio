@@ -692,3 +692,50 @@ html {
 .text-theme-muted {
   color: var(--text-muted);
 }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  button, a, input, select, textarea {
+    min-height: 44px;
+  }
+
+  /* Prevent text size adjustments on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Smooth scrolling on mobile */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Optimize font rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Prevent zoom on input focus on mobile */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Disable animations on reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

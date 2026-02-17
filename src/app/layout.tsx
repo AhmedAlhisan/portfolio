@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ahmed Alhisan | AI Product Manager & Senior AI Engineer",
   description: "AI Product Manager & Senior AI Engineer with 7+ years of experience specializing in voice intelligence (ASR + LLMs), RAG pipelines, and agentic systems in Riyadh, Saudi Arabia. Building production-ready AI solutions with measurable business impact.",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
   keywords: [
     "AI Product Manager",
     "AI Engineer",
