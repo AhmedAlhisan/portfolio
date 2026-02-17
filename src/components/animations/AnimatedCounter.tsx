@@ -20,7 +20,7 @@ export function AnimatedCounter({
   className = ''
 }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null)
-  const isInView = useInView(ref, { once: true })
+  const isInView = useInView(ref as React.RefObject<Element>, { once: true })
   const prefersReducedMotion = usePrefersReducedMotion()
 
   useEffect(() => {

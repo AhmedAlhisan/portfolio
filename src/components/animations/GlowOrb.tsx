@@ -6,6 +6,9 @@ interface GlowOrbProps {
   color?: 'cyan' | 'blue' | 'indigo' | 'purple'
   size?: number
   delay?: number
+  duration?: number
+  top?: string
+  left?: string
   className?: string
 }
 
@@ -13,6 +16,9 @@ export function GlowOrb({
   color = 'cyan',
   size = 384,
   delay = 0,
+  duration = 6,
+  top,
+  left,
   className = ''
 }: GlowOrbProps) {
   const colorClasses = {
@@ -25,14 +31,14 @@ export function GlowOrb({
   return (
     <motion.div
       className={`absolute rounded-full blur-3xl ${colorClasses[color]} ${className}`}
-      style={{ width: size, height: size }}
+      style={{ width: size, height: size, top, left }}
       animate={{
         y: [0, -20, 0],
         x: [0, 10, 0],
         scale: [1, 1.1, 1]
       }}
       transition={{
-        duration: 6,
+        duration,
         repeat: Infinity,
         ease: 'easeInOut',
         delay

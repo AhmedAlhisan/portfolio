@@ -25,7 +25,7 @@ export function TimelineItem({
   isLast = false,
 }: TimelineItemProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { margin: '-100px', once: true })
+  const isInView = useInView(ref as React.RefObject<Element>, { margin: '-100px', once: true })
 
   return (
     <div ref={ref} className="relative flex gap-8">

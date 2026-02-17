@@ -15,7 +15,7 @@ interface ProjectCaseStudyProps {
       id: string
       label: string
       icon: string
-      color: 'cyan' | 'blue' | 'indigo' | 'purple'
+      color: string
     }>
     connections: Array<{
       from: string

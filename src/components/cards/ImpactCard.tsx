@@ -66,7 +66,7 @@ export function ImpactCard({
   index,
 }: ImpactCardProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { margin: '-100px', once: true })
+  const isInView = useInView(ref as React.RefObject<Element>, { margin: '-100px', once: true })
   const Icon = iconMap[icon] || Brain
 
   const colorConfig = colorClasses[color]

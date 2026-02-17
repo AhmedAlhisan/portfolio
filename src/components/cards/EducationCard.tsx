@@ -26,7 +26,7 @@ export function EducationCard({
   index,
 }: EducationCardProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { margin: '-100px', once: true })
+  const isInView = useInView(ref as React.RefObject<Element>, { margin: '-100px', once: true })
 
   const statusColors = {
     'In Progress': 'bg-yellow-500/20 text-yellow-400 border-yellow-400/30',

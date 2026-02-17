@@ -25,7 +25,7 @@ interface DiagramNode {
   id: string
   label: string
   icon: string
-  color: 'cyan' | 'blue' | 'indigo' | 'purple'
+  color: string
 }
 
 interface DiagramConnection {
@@ -73,7 +73,7 @@ export function ArchitectureDiagram({ nodes, connections }: ArchitectureDiagramP
       <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 lg:gap-8">
         {nodes.map((node, index) => {
           const Icon = iconMap[node.icon] || Brain
-          const colors = colorClasses[node.color]
+          const colors = colorClasses[node.color as keyof typeof colorClasses] || colorClasses.cyan
           const isLast = index === nodes.length - 1
 
           return (
@@ -155,7 +155,7 @@ export function ArchitectureDiagram({ nodes, connections }: ArchitectureDiagramP
       <div className="md:hidden flex flex-col items-center gap-4 mt-8">
         {nodes.map((node, index) => {
           if (index === nodes.length - 1) return null
-          const colors = colorClasses[node.color]
+          const colors = colorClasses[node.color as keyof typeof colorClasses] || colorClasses.cyan
 
           return (
             <motion.div
