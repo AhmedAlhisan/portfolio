@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { GitBranch, Globe, ArrowLeft } from "lucide-react";
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export default async function ProjectsPage() {
   const projects = await prisma.project.findMany({

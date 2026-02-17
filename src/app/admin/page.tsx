@@ -10,6 +10,7 @@ import { SignOutButton } from "@/components/sign-out-button";
 import { DeleteProjectButton } from "@/components/delete-project-button";
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export default async function AdminDashboard() {
   const session = await auth();
