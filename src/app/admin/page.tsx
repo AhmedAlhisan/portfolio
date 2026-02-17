@@ -67,12 +67,12 @@ export default async function AdminDashboard() {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {projects.map((project) => (
+                    {projects.map((project: any) => (
                       <TableRow key={project.id}>
                         <TableCell className="font-medium">{project.title}</TableCell>
                         <TableCell>
                           <div className="flex gap-1 flex-wrap">
-                            {project.technologies.split(",").map((tech, idx) => (
+                            {project.technologies.split(",").map((tech: string, idx: number) => (
                               <Badge key={idx} variant="secondary">
                                 {tech.trim()}
                               </Badge>
